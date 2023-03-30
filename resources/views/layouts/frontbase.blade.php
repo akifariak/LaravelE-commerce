@@ -41,24 +41,24 @@
 </head>
 <body>
 
-@include('home._header')
+@include('home.header')
 
-@section('_sitebranding')
+@section('sitebranding')
 @show
 
 
 @yield('content')
 
 
-@include('home._sitebranding')
-@include('home._mainmenu')
-@include('home._slider')
-@include('home._promo')
-@include('home._maincontent')
-@include('home._brands')
-@include('home._product-widget')
-@include('home._footer')
-@include('home._footer-bottom')
+@include('home.sitebranding')
+@include('home.mainmenu')
+@include('home.slider')
+@include('home.promo')
+@include('home.maincontent')
+@include('home.brands')
+@include('home.product-widget')
+@include('home.footer')
+@include('home.footer-bottom')
 @yield('foot')
 
 
