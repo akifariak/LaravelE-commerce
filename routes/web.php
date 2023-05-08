@@ -7,10 +7,6 @@ use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 Route::get('/', function () {
     return view('index');
 });
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -21,6 +17,14 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
 // ************************************admin panel ****************************************
 Route::get('/admin', [AdminHomeController::class, 'index'])->name('admin');
 
+Route::get('/admin/login', [AdminHomeController::class, 'login'])->name('login');
+// ************************************admin category ****************************************
+Route::get('/admin/category', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'index'])->name('admin_category');
+Route::get('/admin/category/create', [\App\Http\Controllers\AdminPanel\CategoryController::class, 'create'])->name('admin_category_create');

@@ -20,15 +20,11 @@
 @section('sidebar')
     @include("admin.sidebar")
 @show
+@yield('content')
 
 @include("admin.footer")
 @yield('foot')
 
-@yield('content')
-
-
-
-@yield('foot')
 
 
 
