@@ -7,9 +7,11 @@
 
     <title>@yield('title')</title>
 
-    <meta name="description" content="Free Web tutorials">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Akif ARIAK">
+    <meta name="description" content="@yield("description")">
+    <meta name="keywords" content="@yield("keywords")">
+    <meta name="author" content="@yield("Akif ARIAK")">
+    <link rel="icon" type="image/x-icon" href="@yield("icon")">
+
 
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
@@ -41,26 +43,16 @@
 </head>
 <body>
 
-@include('home.header')
+@include("home.header")
 
-@section('sitebranding')
+
+@section('slider')
 @show
-
 
 @yield('content')
 
-
-@include('home.sitebranding')
-@include('home.mainmenu')
-@include('home.slider')
-@include('home.promo')
-@include('home.maincontent')
-@include('home.brands')
-@include('home.product-widget')
-@include('home.footer')
-@include('home.footer-bottom')
+<@include("home.footer")
 @yield('foot')
-
 
 </body>
 </html>
