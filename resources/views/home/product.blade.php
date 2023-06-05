@@ -73,11 +73,13 @@
                                         <ins>{{$data->price}}</ins>
                                     </div>
 
-                                    <form action="" class="cart">
+                                    <form action="{{route('shopcart.store')}}" class="cart" method="post">
+                                        @csrf
                                         <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                            <input type="number"  class="input-text qty text" title="Qty" value="1" min="1" name="quantity" >
+                                            <input type="number"  class="input-text qty text" title="hidden" value="{{$data->id}}" min="1" name="quantity" >
                                         </div>
-                                        <button class="add_to_cart_button" type="submit">Add to cart</button>
+                                        <button  class="add_to_cart_button" type="submit">Add to cart</button>
                                     </form>
 
 

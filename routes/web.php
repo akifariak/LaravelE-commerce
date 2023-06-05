@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopCartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
@@ -38,18 +39,24 @@ Route::view('/registeruser','home.register') ;
 Route::get('/logoutuser',[HomeController::class, 'logout'])->name('logoutuser') ;
 Route::view('/loginadmin','admin.login') ;
 Route::post('/loginadmincheck',[HomeController::class, 'loginadmincheck'])->name('loginadmincheck') ;
-
-
-
-
-
-
-
-
-
 Route::get('/product/{id}', [HomeController::class, 'product'])->name('product');
 Route::get('/categoryproducts/{id}/{slug}', [HomeController::class, 'categoryproducts'])->name('categoryproducts');
 
+
+
+// ************************************ShopCart ****************************************
+Route::prefix('/shopcart')->name('shopcart.')->controller(ShopCartController::class)->group(function () {
+    Route::get('/','index')->name('index');
+    Route::get('/create','create')->name('create');
+    Route::post('/store','store')->name('store');
+    Route::get('/add/{id}','add')->name('add');
+    Route::post('/update/{id}','update')->name('update');
+    Route::get('/destroy/{id}','destroy')->name('destroy');
+    Route::get('/show/{id}','show')->name('show');
+    Route::post('/order','order')->name('order');
+    Route::post('/storeorder','storeorder')->name('storeorder');
+    Route::get('/ordercomplete','ordercomplete')->name('ordercomplete');
+});
 // ************************************admin panel ****************************************
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');

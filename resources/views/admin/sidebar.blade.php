@@ -14,8 +14,8 @@
                 <img src="{{asset('assets')}}/admin/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-{{--                {{Auth::user()->name}}--}}
-                <a href="#" class="d-block">Ahmet</a>
+
+                <a href="#" class="d-block">{{Auth::user()->name}}</a>
                 <li><a href="/logoutuser"><i class="fa fa-user"></i> Logout</a></li>
             </div>
         </div>
@@ -39,7 +39,7 @@
                      with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <a href="/admin" class="nav-link"> <i class="nav-icon fas fa-home text-yellow"></i>Dashboard</a>
+                    <a href="/admin" class="nav-link"> <i class="nav-icon fas fa-home text"></i>Dashboard</a>
                 </li>
 
                 <li class="nav-item">
@@ -80,17 +80,13 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="/admin/category" class="nav-link"> <i class="nav-icon fas fa-th text-blue"></i>Categories</a>
+                    <a href="/admin/category" class="nav-link"> <i class="nav-icon fas fa-th text"></i>Categories</a>
                 </li>
 
                 <li class="nav-item">
                     <a href="/admin/product" class="nav-link"> <i class="nav-icon fas fa-th"></i>Products</a>
                 </li>
 
-
-                <li class="nav-item">
-                    <a href="/admin/comment" class="nav-link"> <i class="nav-icon fas fa-comment"></i>Comments</a>
-                </li>
 
                 <li class="nav-item">
                     <a href="{{route('admin.faq.index')}}" class="nav-link"> <i class="nav-icon fas fa-question"></i>FAQ</a>
@@ -100,7 +96,7 @@
                     <a href="{{route('admin.message.index')}}" class="nav-link"> <i class="nav-icon fas fa-mail-bulk"></i>Messages</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/user" class="nav-link"> <i class="nav-icon fas fa-user text-green"></i>Users</a>
+                    <a href="/admin/user" class="nav-link"> <i class="nav-icon fas fa-user text"></i>Users</a>
                 </li>
                 <li class="nav-item">
                     <a href="/admin/social" class="nav-link"> <i class="nav-icon fas fa-th"></i>Social</a>
